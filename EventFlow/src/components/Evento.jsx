@@ -1,13 +1,22 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Evento = ({ Evento, setEvento, click, setClick }) => {
+const Evento = () => {
+  const [evento, setEvento] = useState("");
   const [tipoEvento, setTipoEvento] = useState("");
   const [fecha, setFecha] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setClick(!click);
-    // Realizar acciones con los datos ingresados, como enviarlos al servidor, etc.
+
+    // Guardar los datos en el Local Storage
+    localStorage.setItem("evento", evento);
+    localStorage.setItem("tipoEvento", tipoEvento);
+    localStorage.setItem("fecha", fecha);
+
+    // Limpiar el formulario
+    setEvento("");
+    setTipoEvento("");
+    setFecha("");
   };
 
   return (
@@ -19,12 +28,8 @@ const Evento = ({ Evento, setEvento, click, setClick }) => {
         <input
           id="Evento"
           type="text"
-          value={Evento}
-          onChange={(e) => {
-            if (Number(e.target.value) || e.target.value === "") {
-              setEvento(e.target.value);
-            }
-          }}
+          value={evento}
+          onChange={(e) => setEvento(e.target.value)}
           placeholder="Ingrese Evento"
           className="border-2 w-full p-1 bg-transparent text-black"
         />
