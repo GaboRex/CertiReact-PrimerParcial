@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png"; 
+import logo from "../assets/logo2.svg"; 
 const Navbar = () => {
   return (
     <nav className="bg-blue-200 text-white py-1">
