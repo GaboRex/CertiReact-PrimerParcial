@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Evento = () => {
+const EventoForm = ({ onAgregarEvento }) => {
   const [evento, setEvento] = useState("");
   const [tipoEvento, setTipoEvento] = useState("");
   const [fecha, setFecha] = useState("");
@@ -8,10 +8,21 @@ const Evento = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Guardar los datos en el Local Storage
-    localStorage.setItem("evento", evento);
-    localStorage.setItem("tipoEvento", tipoEvento);
-    localStorage.setItem("fecha", fecha);
+    // Verificar si algún campo está vacío
+    if (!evento || !tipoEvento || !fecha) {
+      alert("Por favor, completa todos los campos");
+      return;
+    }
+
+    // Crear un objeto con los datos del evento
+    const nuevoEvento = {
+      evento,
+      tipoEvento,
+      fecha,
+    };
+
+    // Invocar la función para agregar el evento
+    onAgregarEvento(nuevoEvento);
 
     // Limpiar el formulario
     setEvento("");
@@ -46,7 +57,6 @@ const Evento = () => {
           <option value="Fiesta">Fiesta</option>
           <option value="Cumpleanios">Cumpleaños</option>
           <option value="Boda">Boda</option>
-          {/* Agrega más opciones según tus necesidades */}
         </select>
 
         <input
@@ -69,4 +79,4 @@ const Evento = () => {
   );
 };
 
-export default Evento;
+export default EventoForm;

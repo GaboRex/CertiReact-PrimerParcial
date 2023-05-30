@@ -1,14 +1,24 @@
 
 import './App.css'
-import Evento from './components/Evento';
+import EventoForm from './components/EventoForm';
 import Navbar from './components/Navbar';
+import ResumenEvento from './components/ResumenEvento';
 import  { useState } from 'react';
 
 const App = () => {
+  const [misEventos, setMisEventos] = useState([]);
+
+  const agregarEvento = (nuevoEvento) => {
+    setMisEventos([...misEventos, nuevoEvento]);
+  };
+
   return (
-    <div className="bg-blue-950 min-h-screen">
+    <div>
+      <div className="bg-blue-950 min-h-screen">
       <Navbar />
-    <Evento/>
+      <EventoForm onAgregarEvento={agregarEvento} />
+      {misEventos.length > 0 && <ResumenEvento misEventos={misEventos} />}
+    </div>
     </div>
   );
 };
