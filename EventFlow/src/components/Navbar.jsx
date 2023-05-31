@@ -1,10 +1,9 @@
-
 import logo from "../assets/logo2.svg";
 import facebookLogo from "../assets/facebook.png";
 import youtubeLogo from "../assets/youtube.png";
 import instagramLogo from "../assets/instagram.png";
 
-const Navbar = ({ eventCounters }) => {
+const Navbar = () => {
   return (
     <nav className="bg-blue-200 text-white py-1">
       <div className="container mx-auto flex justify-between items-center">

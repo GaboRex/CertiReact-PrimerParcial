@@ -1,40 +1,57 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const EventoForm = ({ onAgregarEvento }) => {
   const [evento, setEvento] = useState("");
   const [tipoEvento, setTipoEvento] = useState("");
   const [fecha, setFecha] = useState("");
+  const [exito, setExito] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Verificar si algún campo está vacío
+    // Aqui podemos verificar si algun campo esta vacio
     if (!evento || !tipoEvento || !fecha) {
       alert("Por favor, completa todos los campos");
       return;
     }
 
-    // Crear un objeto con los datos del evento
+    // Creamos un objeto de tipo nuevoEvento
     const nuevoEvento = {
       evento,
       tipoEvento,
       fecha,
     };
 
-    // Invocar la función para agregar el evento
+    // Lo agregamos con esta funcion
     onAgregarEvento(nuevoEvento);
 
-    // Limpiar el formulario
+    //Limpiamos nuestro formulario
     setEvento("");
     setTipoEvento("");
     setFecha("");
+    setExito(true);
   };
+
+  useEffect(() => {
+    if (exito) {
+      const timeout = setTimeout(() => {
+        setExito(false);
+      }, 3000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [exito]);
 
   return (
     <div className="bg-blue-200 shadow-lg rounded-md my-10 py-5 w-1/3 md:w-1/3 mx-auto">
       <h2 className="text-blue-950 text-3xl text-center font-bold">
         Evento
       </h2>
+      {exito && (
+        <p className="text-green-600 text-center font-bold">
+          ¡Tu evento fue registrado con éxito!
+        </p>
+      )}
       <form className="py-2 my-5 m-5" onSubmit={handleSubmit}>
         <input
           id="Evento"

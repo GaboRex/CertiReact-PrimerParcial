@@ -62,13 +62,13 @@ const App = () => {
           onClick={toggleModal}
           className="bg-blue-200 text-blue-950 px-4 py-2 rounded-md"
         >
-          Ver Contadores
+          ¿Cuantos eventos tengo?
         </button>
       </div>
       {modalOpen && (
         <Modal onClose={toggleModal}>
           <h2 className="text-blue-950 text-3xl text-center font-bold">
-            Contadores de Evento
+            Cuantos eventos tengo
           </h2>
           <ul className="space-y-4">
             {Object.entries(eventCounters).map(([tipoEvento, count]) => (
