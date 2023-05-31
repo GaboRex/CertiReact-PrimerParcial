@@ -17,7 +17,7 @@ Contamos con 4 componentes y nuestro componente padre:
 * [ResumenEvento](EventFlow/src/components/ResumenEvento.jsx)
 * [Modal](EventFlow/src/components/Modal.jsx)
 
-## Instalacion🔧
+## Instalacion.🔧
 
 1. Debemos clonar nuestro repositorio ejecutando el comando:
 
@@ -35,7 +35,7 @@ Contamos con 4 componentes y nuestro componente padre:
         npm run dev
 
 5. Disfruta de nuestra interfaz amigable y registra todos tus eventos con nosotros.
-
+ ![image](https://github.com/GaboRex/CertiReact-PrimerParcial/assets/80688833/4c4e5386-8a2f-4381-b33c-62a1400e1c84)
 
 
 
