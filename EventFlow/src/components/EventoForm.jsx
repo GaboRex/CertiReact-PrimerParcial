@@ -42,7 +42,7 @@ const EventoForm = ({ onAgregarEvento }) => {
           value={evento}
           onChange={(e) => setEvento(e.target.value)}
           placeholder="Ingrese Evento"
-          className="border-2 w-full p-1 bg-transparent text-black"
+          className="border-2 w-full p-1 bg-transparent text-black placeholder-blue-950"
         />
 
         <select
