@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const EventoForm = ({ onAgregarEvento }) => {
   const [evento, setEvento] = useState("");
@@ -55,7 +55,7 @@ const EventoForm = ({ onAgregarEvento }) => {
           <option value="Conferencia">Conferencia</option>
           <option value="Reunión">Reunión</option>
           <option value="Fiesta">Fiesta</option>
-          <option value="Cumpleanios">Cumpleaños</option>
+          <option value="Cumpleaños">Cumpleaños</option>
           <option value="Boda">Boda</option>
         </select>
 
@@ -69,7 +69,7 @@ const EventoForm = ({ onAgregarEvento }) => {
 
         <input
           type="submit"
-          value="Agregar"
+          value="Agregar evento a nuestra agenda"
           className="bg-blue-950 w-full p-5 
                 rounded-md my-5 text-white font-bold 
                 cursor-pointer hover:bg-blue-700"
