@@ -1,4 +1,4 @@
-import React from "react";
+
 import logo from "../assets/logo2.svg";
 import facebookLogo from "../assets/facebook.png";
 import youtubeLogo from "../assets/youtube.png";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import EventoForm from "./components/EventoForm";
 import Navbar from "./components/Navbar";
 import ResumenEvento from "./components/ResumenEvento";
