@@ -9,8 +9,8 @@ _EventFlow es una pagina web la cual tiene como objetivo gestionar nuestros even
 * Estructura de la página que incluye un encabezado, un formulario de contacto, una lista de características y un botón de envío.
 ## Componentes.
 Contamos con 4 componentes y nuestro componente padre:
-* [App.jsx](EventFlow\src\App.jsx)
-* NavBar.jsx
-* EventForm.jsx
-* ResumenEvento.jsx
-* Modal.jsx
+* [App](EventFlow/src/App.jsx)
+* [NavBar](EventFlow/src/components/Navbar.jsx) 
+* EventForm
+* ResumenEvento
+* Modal
